@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{text-align:center;font-size:150px;}
+        .kan{width:200px;height:200px;position:absolute;}
+        .top{position:absolute;top:0;left:0;width:100%;background:#000;}
+        .left{position:absolute;top:0;left:0;height:100%;background:#000;}
+        .right{position:absolute;top:0;right:0;height:100%;background:#000;}
+        .bottom{position:absolute;bottom:0;right:0;width:100%;background:#000;}
+    </style>
+    <script src=jquery.min.js></script>
+</head>
+<body>
+    <div class="kan"></div>
+    <div class="top"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="bottom"></div>
+    <script>
+    $(document).mouseover(function(e){
+        $('.kan').css({top:e.pageY-100,left:e.pageX-100})
+        $('.top').css('height',$('.kan').offset().top)
+        $('.bottom').css('height',window.innerHeight-$('.kan').offset().top-$('.kan').height())
+        $('.left').css('width',$('.kan').offset().left)
+        $('.right').css('width',window.innerWidth-$('.kan').offset().left-$('.kan').width())
+            console.log(top)
+    }).mousemove(function(e){
+        $('.kan').css({top:e.pageY-100,left:e.pageX-100})
+         $('.top').css('height',$('.kan').offset().top)
+        $('.bottom').css('height',window.innerHeight-$('.kan').offset().top-$('.kan').height())
+        $('.left').css('width',$('.kan').offset().left)
+        $('.right').css('width',window.innerWidth-$('.kan').offset().left-$('.kan').width())
+    })
+    </script>
+
+<p>你看我干嘛？？？</p>
+<p>我是不是很好看？</p>
+</body>
+</html>
